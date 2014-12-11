@@ -1,0 +1,12 @@
+Package: GSwGBS
+Type: Package
+Title: Genomic Selection with Genotyping-by-Sequencing
+Version: 0.4
+Date: 2014-12-11
+Author: Java code by Jesse Poland, Chris Gaynor and Trevor Rife. R code by Chris Gaynor.
+Maintainer: Chris Gaynor <gaynor.robert@hotmail.com>
+Description: Contains functions for performing genomic selection with genotyping-by-sequencing markers obtained using the de novo method described by Poland et al. (2012). Included is a function for running the GBS SNP calling pipeline using Tassel 4.0. Functions for converting SNP calls to numerically coded markers and performing multiple genomic selections methods using those markers are also included. This package is still under development and may contain bugs, so use at your own risk. The first stable release will be version 1.0.
+License: GPL-3
+Depends: R (>= 3.0), rJava, foreach, doParallel
+Suggests: rrBLUP, glmnet, pls, randomForest, missForest
+SystemRequirements: Java (= 1.7)
