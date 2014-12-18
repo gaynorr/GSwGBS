@@ -154,7 +154,6 @@ function(phenoTrain, genoTrain, genoPredict, n.core="auto", ntree=1000, fineTune
                     .packages="randomForest")%dopar%{
       randomForest::randomForest(genoTrain, phenoTrain, ntree=ntree, proximity=FALSE)
     }
-    cat("     Average Pseudo R-squared = ", round(mean(model$rsq),2), "\n")
     prediction = predict(model, genoPredict)
     invisible(as.vector(prediction))
   }
