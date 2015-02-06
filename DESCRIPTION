@@ -1,7 +1,7 @@
 Package: GSwGBS
 Type: Package
 Title: Genomic Selection with Genotyping-by-Sequencing
-Version: 0.5
+Version: 0.6
 Date: 2015-02-05
 Author: Chris Gaynor, Jesse Poland, and Trevor Rife
 Maintainer: Chris Gaynor <gaynor.robert@hotmail.com>

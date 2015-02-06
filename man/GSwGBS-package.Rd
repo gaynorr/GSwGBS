@@ -12,7 +12,7 @@ Contains functions for performing genomic selection with genotyping-by-sequencin
 \tabular{ll}{
 Package: \tab GSwGBS\cr
 Type: \tab Package\cr
-Version: \tab 0.5\cr
+Version: \tab 0.6\cr
 Date: \tab 2015-02-05\cr
 License: \tab LGPL-2\cr
 }}
