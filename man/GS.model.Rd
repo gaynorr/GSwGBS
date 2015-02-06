@@ -59,9 +59,9 @@ Returns a data frame with predictions for lines in 'genoPredict'. Row names come
 geno = matrix(runif(1000000,-1,1),1000,1000)
 dimnames(geno) = list(paste("Line",1:1000,sep=""),paste("M",1:1000,sep=""))
 trait = rnorm(900)
-training = cbind(trait, geno[1:900,])
-testing = geno[901:1000,]
+training = as.data.frame(cbind(trait, geno[1:900,]))
+testing = as.data.frame(geno[901:1000,])
 tmp = GS.model(phenoTrain=training[,1], genoTrain=training[,-1], 
-			   genoPredict=testing, methods="RRBLUP)
+			   genoPredict=testing, methods="RRBLUP")
 }
 }

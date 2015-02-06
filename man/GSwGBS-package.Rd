@@ -12,12 +12,12 @@ Contains functions for performing genomic selection with genotyping-by-sequencin
 \tabular{ll}{
 Package: \tab GSwGBS\cr
 Type: \tab Package\cr
-Version: \tab 0.4\cr
-Date: \tab 2014-12-11\cr
+Version: \tab 0.5\cr
+Date: \tab 2015-02-05\cr
 License: \tab LGPL-2\cr
 }}
 \author{
-Java code by Jesse Poland, Chris Gaynor, and Trevor Rife. R code by Chris Gaynor.
+Chris Gaynor, Jesse Poland, and Trevor Rife
 }
 \references{
 \cite{Bradbury, P.J., Z. Zhang, D.E. Kroon, T.M. Casstevens, Y. Ramdoss, and E.S. Buckler. 2007. TASSEL: Software for association mapping of complex traits in diverse samples. Bioinformatics 23:2633-2635.}
