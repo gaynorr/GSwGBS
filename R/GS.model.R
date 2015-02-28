@@ -165,7 +165,7 @@ function(phenoTrain, genoTrain, genoPredict, n.core="auto", ntree=1000, fineTune
   if(any(methods=="GAUSS")){
     output$GAUSS = GAUSS.F()
   }
-  if(any(methods=="PLST") | any(methods=="ELNET") | any(methods=="RF")){
+  if(any(methods=="PLSR") | any(methods=="ELNET") | any(methods=="RF")){
     cat("Building Workstation Cluster...", "\n")
     cl = parallel::makeCluster(n.core)
     registerDoParallel(cl)
@@ -179,7 +179,7 @@ function(phenoTrain, genoTrain, genoPredict, n.core="auto", ntree=1000, fineTune
   if(any(methods=="RF")){
     output$RF = RF.F()
   }
-  if(any(methods=="PLST") | any(methods=="ELNET") | any(methods=="RF")){
+  if(any(methods=="PLSR") | any(methods=="ELNET") | any(methods=="RF")){
     parallel::stopCluster(cl)
   }
   if(any(methods=="AVE")){
