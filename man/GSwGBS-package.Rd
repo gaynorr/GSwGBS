@@ -6,15 +6,15 @@
 Genomic Selection with Genotyping-by-Sequencing
 }
 \description{
-Contains functions for performing genomic selection with genotyping-by-sequencing markers obtained using the de novo method described by Poland et al. (2012). Included is a function for running the GBS SNP calling pipeline using Tassel 4.0. Functions for converting SNP calls to numerically coded markers and performing multiple genomic selection methods using those markers are also included. This package is still under development and may contain bugs, so use at your own risk. The first stable release will be version 1.0.
+Contains functions for performing genomic selection with genotyping-by-sequencing markers obtained using the de novo method described by Poland et al. (2012). Included is a function for running the GBS SNP calling pipeline using Tassel 4.0. Functions for converting SNPs to numerically coded markers and performing multiple genomic selections methods using those markers are also included. This package is still under development and may contain bugs, so use at your own risk. The first stable release will be version 1.0.
 }
 \details{
 \tabular{ll}{
 Package: \tab GSwGBS\cr
 Type: \tab Package\cr
-Version: \tab 0.6\cr
-Date: \tab 2015-02-05\cr
-License: \tab LGPL-2\cr
+Version: \tab 0.7\cr
+Date: \tab 2015-04-02\cr
+License: \tab GPL-3\cr
 }}
 \author{
 Chris Gaynor, Jesse Poland, and Trevor Rife
