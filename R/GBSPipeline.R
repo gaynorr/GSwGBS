@@ -1,5 +1,5 @@
 GBSPipeline <-
-function(projectName, keyFile, seqDir, tasselJar, heapSize, enzyme="PstI-MspI", maxMissingData=0.8, minorAlleleFreq=0.01, maxHet=0.1, isDHpopulation=F, isBiparental=F, callHets=T, pVal=0.001, runPipeline=T, isQseq=F, tagCountsDir="default", masterTagsFile="default", tbtDir="default", tbtFile="default", tbtFileMerge="default", hapDir="default"){
+function(projectName, keyFile, seqDir, tasselJar, heapSize, enzyme="PstI-MspI", maxMissingData=0.8, minorAlleleFreq=0.01, maxHet=0.1, isDHpopulation=F, callHets=T, pVal=0.001, runPipeline=T, isQseq=F, tagCountsDir=NULL, masterTagsFile=NULL, tbtDir=NULL, tbtFile=NULL, tbtFileMerge=NULL, hapDir=NULL){
   
   #initialize JVM
   if(.jniInitialized){
@@ -19,7 +19,7 @@ function(projectName, keyFile, seqDir, tasselJar, heapSize, enzyme="PstI-MspI", 
   minorAlleleFreq = as.character(minorAlleleFreq)
   maxHet = as.character(maxHet)
   isDHpopulation = tolower(as.character(isDHpopulation))
-  isBiparental = tolower(as.character(isBiparental))
+  isBiparental = "false"
   callHets = tolower(as.character(callHets))
   pVal = as.character(pVal)
   
@@ -27,25 +27,25 @@ function(projectName, keyFile, seqDir, tasselJar, heapSize, enzyme="PstI-MspI", 
   getDate = function() gsub("-", "", Sys.Date())
   
   #create additional arguments for passing to Java
-  if(tagCountsDir=="default"){
+  if(is.null(tagCountsDir)){
     tagCountsDir = file.path(getwd(), projectName, "tagcounts")
   }
-  if(masterTagsFile=="default"){
+  if(is.null(masterTagsFile)){
     masterTagsFile = file.path(getwd(), projectName, 
                                paste("MasterTags_", projectName, ".cnt", sep=""))
   }
-  if(tbtDir=="default"){
+  if(is.null(tbtDir)){
     tbtDir = file.path(getwd(), projectName, "tbt")
   }
-  if(tbtFile=="default"){
+  if(is.null(tbtFile)){
     tbtFile = file.path(getwd(), projectName, 
                         paste("tbt_", projectName, "_", getDate(), ".bin", sep=""))
   }
-  if(tbtFileMerge=="default"){
+  if(is.null(tbtFileMerge)){
     tbtFileMerge = file.path(getwd(), projectName,
                              paste("tbtMerge_", projectName, "_", getDate(), ".bin", sep=""))
   }
-  if(hapDir=="default"){
+  if(is.null(hapDir)){
     hapDir = file.path(getwd(), projectName) 
   }
   

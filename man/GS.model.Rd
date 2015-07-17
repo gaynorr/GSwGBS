@@ -4,24 +4,25 @@
 Genomic Selection Modeler
 }
 \description{
-Makes genomic selection predictions using a variety of methods.
+Makes genomic selection predictions using a variety of methods implemented in other R packages.
 }
 \usage{
-GS.model(phenoTrain, genoTrain, genoPredict, n.core = "auto", ntree = 1000,
-fineTune = T, methods = c("RRBLUP", "GAUSS", "PLSR", "ELNET", "RF"))
+GS.model(phenoTrain, genoTrain, genoPredict, 
+n.core = "auto", ntree = 1000, fineTune = T, 
+methods = c("RRBLUP", "GAUSS", "PLSR", "ELNET", "RF"))
 }
 \arguments{
   \item{phenoTrain}{
 Phenotypic data for your training population. Must be a numeric vector listed in the same order as genoTrain.
 }
   \item{genoTrain}{
-Genotypic data for your training population. Must be a numerically coded (i.e.; 1, 0, -1) in a matrix or data frame with markers as columns and plant lines as rows. Missing values are not allowed. Row names must be unique and can't be the same as those used for genoPredict if using method="GAUSS".
+Genotypic data for your training population. Must be a numerically coded (i.e.; 1, 0, -1) in a matrix or data frame with markers as columns and individuals as rows. Missing values are not allowed. Row names must be unique and can't be the same as those used for genoPredict if using method="GAUSS".
 }
   \item{genoPredict}{
-Genotypic data for your testing population. Formatting is the same as genoTrain.
+Genotypic data for your testing population. Formatting is the same as for genoTrain.
 }
   \item{n.core}{
-Number of cores to use for parallel computing. If n.core="auto", n.core will be set to the number of detected cores.
+Number of cores to use for parallel computing. If n.core="auto", n.core will be set to the number of detected cores. This may not be desirable due to memory requirements and/or overworking of CPU.
 }
   \item{ntree}{
 For method="RF", the number of trees in the model.
@@ -56,12 +57,15 @@ Returns a data frame with predictions for lines in 'genoPredict'. Row names come
 }
 \examples{
 \dontrun{
-geno = matrix(runif(1000000,-1,1),1000,1000)
-dimnames(geno) = list(paste("Line",1:1000,sep=""),paste("M",1:1000,sep=""))
-trait = rnorm(900)
-training = as.data.frame(cbind(trait, geno[1:900,]))
-testing = as.data.frame(geno[901:1000,])
-tmp = GS.model(phenoTrain=training[,1], genoTrain=training[,-1], 
-			   genoPredict=testing, methods="RRBLUP")
+geno = matrix(runif(10000,-1,1),100,100)
+dimnames(geno) = list(paste("Line",1:100,sep=""), 
+                      paste("M",1:100,sep=""))
+trait = rnorm(90)
+training = as.data.frame(cbind(trait, geno[1:90,]))
+testing = as.data.frame(geno[91:100,])
+tmp = GS.model(phenoTrain=training[,1], 
+               genoTrain=training[,-1], 
+               genoPredict=testing, 
+               methods="RRBLUP")
 }
 }
