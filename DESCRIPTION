@@ -10,4 +10,3 @@ License: GPL-3
 Depends: R (>= 3.0), rJava, foreach, doParallel
 Suggests: rrBLUP, glmnet, pls, randomForest, missForest
 SystemRequirements: Java (= 1.7)
-Repository: CRAN
