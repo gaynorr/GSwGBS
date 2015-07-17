@@ -1,9 +1,9 @@
 Package: GSwGBS
 Type: Package
 Title: Genomic Selection with Genotyping-by-Sequencing
-Version: 0.7
-Date: 2015-04-02
-Author: Chris Gaynor, Jesse Poland, and Trevor Rife
+Version: 1.0
+Date: 2015-07-17
+Author: Chris Gaynor, Jesse Poland, Trevor Rife, and Allan Fritz
 Maintainer: Chris Gaynor <gaynor.robert@hotmail.com>
 Description: Contains functions for performing genomic selection with genotyping-by-sequencing markers obtained using the de novo method described by Poland et al. (2012). Included is a function for running the GBS SNP calling pipeline using Tassel 4.0. Functions for converting SNPs to numerically coded markers and performing multiple genomic selections methods using those markers are also included. This package is still under development and may contain bugs, so use at your own risk. The first stable release will be version 1.0.
 License: GPL-3

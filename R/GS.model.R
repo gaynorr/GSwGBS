@@ -39,17 +39,17 @@ function(phenoTrain, genoTrain, genoPredict, n.core="auto", ntree=1000, fineTune
      n.core=parallel::detectCores()
   }
   if(any(methods=="RRBLUP") | any(methods=="GAUSS")){
-    require(rrBLUP)
+    requireNamespace("rrBLUP")
   }
   if(any(methods=="PLSR")){
-    require(pls)
+    requireNamespace("pls")
   }
   if(any(methods=="ELNET")){
-    require(glmnet)
+    requireNamespace("glmnet")
   }
   if(any(methods=="RF")){
-    require(randomForest)
-	ntree = ceiling(ntree/n.core)
+    requireNamespace("randomForest")
+	 ntree = ceiling(ntree/n.core)
   }
   
   #prepare output

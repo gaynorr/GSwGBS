@@ -1,7 +1,7 @@
 hap2marker <-
   function(files = c("","",""), miss.max=0.7, remove.blank=TRUE, n.core="auto", impute.method=c("none", "median", "mean", "EM", "RF"), ...){
-    switch(impute.method[1], "median"=require(randomForest), "mean"=require(rrBLUP), 
-           "EM"=require(rrBLUP), "RF"=require(missForest))
+    switch(impute.method[1], "median"=requireNamespace("randomForest"), "mean"=requireNamespace("rrBLUP"), 
+           "EM"=requireNamespace("rrBLUP"), "RF"=requireNamespace("missForest"))
     if(n.core=="auto"){
       n.core=parallel::detectCores()
     }
