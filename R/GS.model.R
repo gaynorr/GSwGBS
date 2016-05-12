@@ -62,7 +62,9 @@ function(phenoTrain, genoTrain, genoPredict, n.core="auto", ntree=1000, fineTune
   RRBLUP.F = function(...){
     cat("Executing RR-BLUP...", "\n")
     model = rrBLUP::mixed.solve(phenoTrain, Z=genoTrain)
-    cat(" Training h2:",round((var(phenoTrain)-model$Ve)/var(phenoTrain),2),"\n")
+    Va = model$Vu*sum(1-apply(genoTrain,2,mean)^2)
+    Ve = model$Ve
+    cat(" Training h2:",round(Va/(Va+Ve),2),"\n")
     tmp = genoPredict %*% model$u
     prediction = as.vector(tmp) + model$beta
     invisible(as.vector(prediction))
